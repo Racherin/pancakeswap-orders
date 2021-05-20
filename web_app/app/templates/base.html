@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }} | Pancakeswap Orders</title>
+    <!-- App style -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+<div class="row px-2">
+    <div class="col-4 border-end">
+        <p class="p-2 d-flex justify-content-start">
+            <img class="w-25" src="https://learnbsc.com/wp-content/uploads/2021/04/pcs.png">
+            PANCAKESWAP V2 ORDERS</p>
+        <div class="list-group p-2">
+            <a href="#" class="list-group-item list-group-item-action ml-1">Get Started</a>
+            <a href="#" class="list-group-item list-group-item-action ml-1 active">Add Order</a>
+            <a href="#" class="list-group-item list-group-item-action ml-1">Active Orders</a>
+            <a href="#" class="list-group-item list-group-item-action ml-1">Order History</a>
+            <a href="#" class="list-group-item list-group-item-action ml-1">Settings</a>
+        </div>
+
+        <div style="margin-top: 100px">
+            <div class="card m-2">
+                <div class="card-body p-2 d-flex justify-content-start">
+                    <img class="mx-2" style="width: 28px" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png">
+                    <div>BTC : <span id="result-btc" class="mx-1">$39,317.63</span></div>
+                </div>
+            </div>
+
+            <div class="card m-2">
+                <div class="card-body p-2 d-flex justify-content-start">
+                    <img class="mx-2" style="width: 28px" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png">
+                    <div>BNB : <span id="result-bnb" class="mx-1">$376.04</span></div>
+                </div>
+            </div>
+
+            <div class="card m-2">
+                <div class="card-body p-2 d-flex justify-content-start">
+                    <img class="mx-2" style="width: 28px" src="https://s2.coinmarketcap.com/static/img/coins/64x64/7186.png">
+                    <div>CAKE : <span id="result-cake" class="mx-1">$19.45</span></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-8">
+        {% block body %}
+
+
+        {% endblock %}
+
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</body>
+</html>

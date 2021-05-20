@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+
+    <div class="p-2">
+
+        <form class="mt-4">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Token address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">If you don't know your token address, check <a
+                        href="https://bscscan.com/tokens">here</a></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Exchange Coin / Token</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option value="1" selected>Binance Coin (BNB)</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select></div>
+
+
+            <div class="row">
+                <div class="mb-3 col-6">
+                    <label for="exampleInputPassword1" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 col-6">
+                    <label for="exampleInputPassword1" class="form-label">Decimals</label>
+                    <input type="number" value="18" class="form-control" id="exampleInputPassword1">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-6">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <input class="form-check-input" checked type="checkbox" value="" id="flexCheckDefault">
+
+                        Buy ($)</label>
+                    <input disabled type="number" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 col-6">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+
+
+                        Sell ($)</label>
+                    <input type="number" value="18" class="form-control" id="exampleInputPassword1">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-6">
+                    <label for="exampleInputPassword1" class="form-label">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        Stoploss ($)</label>
+                    <input disabled type="number"  class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 col-6">
+                    <label for="exampleInputPassword1" class="form-label">GWEI
+                        <svg style="margin-bottom: 4px" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                             fill="currentColor"
+                             class="bi bi-info-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                        </svg>
+                    </label>
+                    <input type="number" value="5" class="form-control" id="exampleInputPassword1">
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Add Order</button>
+        </form>
+
+    </div>
+
+
+{% endblock %}

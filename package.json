@@ -1,0 +1,57 @@
+{
+  "name": "electron-flask",
+  "version": "1.2.0",
+  "description": "",
+  "main": "renderer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "package": "npm run -s package-python && npm run -s package-electron && npm run -s package-cleanup",
+    "package-python": "pyinstaller -w --onefile --add-data web_app/app/templates;templates --add-data web_app/app/static;static web_app/run_app.py --distpath dist-python",
+    "package-electron": "electron-builder",
+    "package-cleanup": "rm -rf build && rm -rf run_app.spec && rm -rf dist-python",
+    "tw:build": "tailwindcss build ./src/css/tailwind.css -o ./web_app/static/css/tailwind.css",
+    "tw:watch": "onchange 'tailwind.config.js' 'src/**/*.css' -- npm run tw:build"
+  },
+  "build": {
+    "appId": "com.electron-flask.my-app",
+    "productName": "ElectronFlask",
+    "asar": false,
+    "asarUnpack": [
+      "**/*.node"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "renderer.js",
+      "icon.png",
+      "node_modules/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "dist-python/",
+        "to": "app/dist-python",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.3",
+    "electron-reload": "^1.5.0",
+    "onchange": "^7.1.0",
+    "postcss": "^8.2.15",
+    "postcss-cli": "^8.3.1",
+    "ps-tree": "^1.2.0",
+    "tailwindcss": "^2.1.2"
+  },
+  "devDependencies": {
+    "electron": "^9.2.0",
+    "electron-builder": "^22.8.0"
+  }
+}
