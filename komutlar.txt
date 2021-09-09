@@ -1,0 +1,30 @@
+pip install virtualenv
+
+virtualenv -p -/usr/local/bin/<python-versionu> virtualenv
+
+bash için
+source venv/bin/active
+
+cmd için
+venv/Scripts/active
+
+çıkmak için deactivate
+
+
+django projesini başlatma
+django-admin startproject core . 
+
+server run :
+python manage.py runserver 
+
+app oluşturmak için 
+python manage.py startapp blog
+
+python manage.py startapp api
+
+{% url 'index' %}
+
+
+python manage.py makemigrations --dry-run
+
+python manage.py createsuperuser
